@@ -1,69 +1,63 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 * {
   box-sizing: border-box;
 }
 
-body  {
-    background-color: #b8c6db;
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
+body {
+  font-family: 'Muli';
+  box-sizing: border-box;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.quiz-container {
-    background-color:white;
-    width: 400px;
-    border-radius: 10px;
-    box-shadow: 0 0 10 5px rgb(100,100,100,0.10);
-    width: 500px;
-    max-width: 100%;
-    overflow: hidden;
-  
+.container {
+  display: flex;
+  width: 90vw;
 }
 
-.quiz-header {
-  padding: 2rem;
-}
-
-
-
-button {
-  background-color: #706fd3;
-  border: none;
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 40px;
   color: white;
-  font-family: inherit;
-  font-size: 1.2rem;
-  display: block;
-  width: 100%;
-  padding: 1rem;
   cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
 }
 
-button:hover {
-  background-color: #4644b4;
+.panel h3 {
+  position: absolute;
+  font-size: 24px;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+.panel.active {
+  flex: 5;
 }
 
-button:focus{
-  background-color:#3f3e94 ;
-  outline: none;
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.5s;
 }
 
-ul {
-  list-style-type: none;
-}
-
-ul li {
-  margin: 1rem 0;
-  font-size: 1rem;
-}
-
-h2 {
-  padding: 2rem;
+@media (max-width: 520px) {
+  .container {
+    width: 100vw;
+  }
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5),
+  .panel:nth-of-type(6) {
+    display: none;
+  }
 }
